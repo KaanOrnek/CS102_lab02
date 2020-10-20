@@ -1,0 +1,29 @@
+import cs1.SimpleURLReader;
+/**
+ * CS102-Section 1 - Lab 2
+ * @author Mehmet Kaan Örnek
+ * @version 20.10.2020
+ */ 
+public class MySimpleURLReader extends SimpleURLReader
+{
+   private String url;
+   
+   public MySimpleURLReader( Sting givenUrl )
+   {
+      url = givenUrl
+      super( url );
+   }
+   
+   public String getURL(){
+      return url;
+   }
+   public String getName(){
+      int index = 0;
+      
+      for( int i = url.length()-1; i > 0; i-- ){
+         if( url.charAt(i).equals( '/' ) )
+            index = i;
+      }
+      return url.substring(index+1);
+   }
+}
