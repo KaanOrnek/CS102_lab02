@@ -1,0 +1,23 @@
+/**
+ * CS102-Section 1 - Lab 2
+ * @author Mehmet Kaan Örnek
+ * @version 20.10.2020
+ */ 
+public class Lab02
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+
+      // constants
+
+      // variables
+
+      // program code
+      System.out.println( "Start...");
+
+
+      System.out.println( "End.");
+   }
+
+}
