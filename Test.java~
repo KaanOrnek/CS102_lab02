@@ -1,0 +1,23 @@
+import cs1.SimpleURLReader;
+/**
+ * CS102-Section 1 - Lab 2 part f
+ * @author Mehmet Kaan Örnek
+ * @version 21.10.2020
+ */ 
+public class Test
+{
+   public static void main( String[] args)
+   {
+
+      // constants
+      final String URL = "http://www.cs.bilkent.edu.tr/~ozturk/cs102/housman.txt";
+
+      // variables
+      
+      //TEST FOR PART B - Testing MySimpleUrlReader
+      MySimpleURLReader b = new MySimpleURLReader( URL );
+      
+      System.out.println( "getURL() method of MySimpleURLReader:\n" + b.getURL() );
+   }
+
+}
