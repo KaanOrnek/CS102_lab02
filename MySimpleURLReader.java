@@ -1,7 +1,7 @@
 import cs1.SimpleURLReader;
 import java.util.ArrayList;
 /**
- * CS102-Section 1 - Lab 2
+ * CS102-Section 1 - Lab 2 part b and c
  * @author Mehmet Kaan Örnek
  * @version 20.10.2020
  */ 
