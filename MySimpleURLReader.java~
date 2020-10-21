@@ -6,24 +6,53 @@ import cs1.SimpleURLReader;
  */ 
 public class MySimpleURLReader extends SimpleURLReader
 {
-   private String url;
+   private String givenUrl;
    
-   public MySimpleURLReader( Sting givenUrl )
+   public MySimpleURLReader( String url )
    {
-      url = givenUrl
       super( url );
+      givenUrl = url;
    }
    
    public String getURL(){
-      return url;
+      return givenUrl;
    }
    public String getName(){
       int index = 0;
       
-      for( int i = url.length()-1; i > 0; i-- ){
-         if( url.charAt(i).equals( '/' ) )
+      for( int i = givenUrl.length()-1; i > 0; i-- ){
+         if( givenUrl.charAt(i) == '/' ){
             index = i;
+            return givenUrl.substring(index+1);
+         }
       }
-      return url.substring(index+1);
+      return null;
+   }
+   public int getNumberOfCSSLinks(){
+      String source = this.getPageContents();
+      int lengthOfTheURL = source.length();
+      int numberOfCSSLinks = 0;
+      int indexOfTheEndingParenthesis = 0;
+//      
+//      for( int startingPoint = 0; startingPoint < lengthOfTheURL; startingPoint++ ){
+//         for( int endingPoint = lengthOfTheURL-1; endingPoint > startingPoint; endingPoint-- ){
+//            
+//            if( source.substring( startingPoint, endingPoint ).equals( "<link rel=\"stylesheet\"" ) ){
+//               
+//               for( int i = startingPoint; source.charAt(i) != '>'; i++)
+//                  indexOfTheEndingParenthesis = i+1;
+//               
+//               for( int k = startingPoint; k+4 < indexOfTheEndingParenthesis; k++ )
+//                  if( source.substring( k, k+5 ).equals( ".css\"" ) )
+//                        numberOfCSSLinks++;
+//            }
+//            
+//         }
+//         
+//      }
+//      
+//      return numberOfCSSLinks;
+      
+      for( int i = 0; i < lengthOfTheURL-5; i++ ) //html substringlerini kontrol et,
    }
 }
