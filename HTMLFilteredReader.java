@@ -14,15 +14,31 @@ public class HTMLFilteredReader extends MySimpleURLReader
    public String getPageContents()
    {
       String source = this.getUnfilteredPageContents();
+      String filteredJavaScript = "";
       String filtered = "";
       
-      for( int i = 0; i < source.length(); i++ )
+      for( int i = 0; i + 8 < source.length(); i++ )
       {
-         if( source.charAt(i) != '<' )
-            filtered += source.charAt(i);
+         if( !source.substring( i , i + 7 ).equals("<script") )
+         {
+            filteredJavaScript += source.charAt( i );
+         }
          else
          {
-            while( source.charAt(i) != '>' )
+            i = i+7;
+            while( !source.substring(i,i+9).equals( "</script>" ) )
+               i++;
+            i = i+9;
+         }
+      }
+      
+      for( int i = 0; i < filteredJavaScript.length(); i++ )
+      {
+         if( filteredJavaScript.charAt(i) != '<' )
+            filtered += filteredJavaScript.charAt(i);
+         else
+         {
+            while( filteredJavaScript.charAt(i) != '>' )
                i++;
          }
       }

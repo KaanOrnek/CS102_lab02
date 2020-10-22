@@ -1,4 +1,3 @@
-import cs1.SimpleURLReader;
 /**
  * CS102-Section 1 - Lab 2 part d
  * @author Mehmet Kaan Örnek
@@ -6,12 +5,10 @@ import cs1.SimpleURLReader;
  */ 
 public class HTMLFilteredReader extends MySimpleURLReader
 {
-   private String givenUrl;
    
-   public MySimpleURLReader( String url )
+   public HTMLFilteredReader( String url )
    {
       super( url );
-      givenUrl = url;
    }
    
    public String getPageContents()
